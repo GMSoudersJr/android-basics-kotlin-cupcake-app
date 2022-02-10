@@ -56,8 +56,9 @@ class FlavorFragment : Fragment() {
         Log.d("FlavorFragment", "${sharedViewModel.quantity.value} cupcakes ordered!")
 
         binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            nextButton.setOnClickListener { goToNextScreen() }
+            flavorFragment = this@FlavorFragment
         }
     }
 
