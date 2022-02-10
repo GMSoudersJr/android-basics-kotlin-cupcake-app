@@ -16,7 +16,6 @@
 package com.example.cupcake
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -58,7 +57,6 @@ class StartFragment : Fragment() {
      */
     fun orderCupcake(quantity: Int) {
         sharedViewModel.setQuantity(quantity)
-        Log.d("StartFragment", "orderCupcake clicked!")
         if (sharedViewModel.hasNoFlavorSet()) {
             sharedViewModel.setFlavor(getString(R.string.vanilla))
         }
@@ -70,7 +68,6 @@ class StartFragment : Fragment() {
      * is being removed. As a result, clear out the binding object.
      */
     override fun onDestroyView() {
-        Log.d("StartFragment", "StartFragment destroyed!")
         super.onDestroyView()
         binding = null
     }
